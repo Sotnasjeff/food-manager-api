@@ -1,0 +1,14 @@
+syntax = "proto3";
+package pb;
+option go_package= "github.com/movies-manager-api/pb";
+
+import "movie_model.proto";
+
+message CreateMovieRequest {
+    string name = 1;
+    string description = 2;
+}
+
+message CreateMovieResponse {
+    Movie movie = 1;
+}

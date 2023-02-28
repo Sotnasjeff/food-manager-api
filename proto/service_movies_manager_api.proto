@@ -1,0 +1,15 @@
+syntax = "proto3";
+package pb;
+option go_package= "github.com/movies-manager-api/pb";
+
+import "rpc_create_movie.proto";
+import "rpc_get_movie_by_id.proto";
+import "rpc_list_all_movies.proto";
+
+service MovieService {
+    rpc CreateMovie(CreateMovieRequest) returns (CreateMovieResponse) {}
+    rpc CreateMovieStream(stream CreateMovieRequest) returns (ListMoviesResponse) {}
+    rpc CreateMovieBidirectionalStream(stream CreateMovieRequest) returns (stream CreateMovieResponse) {}
+    rpc ListAllMovies(Blank) returns (ListMoviesResponse) {}
+    rpc GetMovieById(GetMovieByIdRequest) returns (GetMovieByIdResponse) {}
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package pb;
+option go_package= "github.com/movies-manager-api/pb";
+
+import "movie_model.proto";
+
+message Blank {
+
+}
+
+message ListMoviesResponse {
+    repeated Movie movie = 1;
+}
